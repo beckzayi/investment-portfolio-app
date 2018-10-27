@@ -12,3 +12,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.pointer {
+	cursor: pointer;
+}
+
+.input-group-text.pointer:hover {
+  background-color: #fff;
+}
+
+.breadcrumb {
+	font-size: 13px;
+}
