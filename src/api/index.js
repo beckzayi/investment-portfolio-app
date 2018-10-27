@@ -3,6 +3,7 @@
  */
 
 import fakeDatabase from './database';
+import axios from 'axios';
 
 // Pretend requesting data with delay
 const delay = (ms) => {
@@ -40,3 +41,11 @@ export const apiFetchShareBySymbol = (symbol) => {
 // 		return fakeDatabase.balance;
 // 	});
 // }
+
+// REAL API
+let api_url_base = "https://api.iextrading.com/1.0/stock/";
+export const realApiFetchShare = (symbol) => {
+	const url = `${api_url_base}${symbol}/quote`;
+	return axios.get(url)
+		.then(res => res.data);
+}

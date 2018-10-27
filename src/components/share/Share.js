@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addCredits, withdrawCredits, increaseEquity, decreaseEquity, fetchShareBySymbol, addOrder } from '../../actions';
+import { addCredits, withdrawCredits, increaseEquity, decreaseEquity, fetchShareBySymbol, addOrder, realApiFetchShareBySymbol } from '../../actions';
 import { formatNumber } from '../../utils';
 
 class Share extends React.Component {
@@ -22,6 +22,8 @@ class Share extends React.Component {
 	componentDidMount() {
 		const { match } = this.props;
 		this.props.fetchShareBySymbol(match.params.symbol);
+
+		this.props.realApiFetchShareBySymbol(match.params.symbol);
 	}
 
 	handleBuySubmit = (e) => {
@@ -157,6 +159,22 @@ class Share extends React.Component {
 		);
 	}
 
+	renderRealApiContent() {
+		const { selectedShareRealApi } = this.props;
+		
+		return(
+			<div className="real_api pt-4 border-top">
+				<div className="pt-4">
+					<p>Below is the <strong>real</strong> api response from iextrading.com. Only for display testing purpose</p>
+					<span className="mr-2">{selectedShareRealApi.symbol}</span>
+					<span className="mr-2">{selectedShareRealApi.companyName}</span>
+					<span className="mr-2">{selectedShareRealApi.change}</span>
+					<span className="mr-2">{selectedShareRealApi.changePercent}</span>
+				</div>
+			</div>
+		);
+	}
+
 	renderBuyForm() {
 		const { selectedShare } = this.props;
 		return(
@@ -248,6 +266,8 @@ class Share extends React.Component {
 					{this.renderBuyForm()}
 					{this.renderSellForm()}
 				</div>
+
+				{this.renderRealApiContent()}
 			</div>
 		);
 	}
@@ -256,11 +276,12 @@ class Share extends React.Component {
 function mapStateToProps(state) {
 	return {
 		balance: state.balance,
-		selectedShare: state.selectedShare
+		selectedShare: state.selectedShare,
+		selectedShareRealApi: state.selectedShareRealApi
 	}
 }
 
 export default connect(
 	mapStateToProps,
-	{ addCredits, withdrawCredits, increaseEquity, decreaseEquity, fetchShareBySymbol, addOrder }
+	{ addCredits, withdrawCredits, increaseEquity, decreaseEquity, fetchShareBySymbol, addOrder, realApiFetchShareBySymbol }
 )(Share);

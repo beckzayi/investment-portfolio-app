@@ -7,12 +7,14 @@ import {
 	RECEIVE_SINGLE_SHARE,
 	FETCH_ORDERS,
 	ADD_ORDER,
-	TOGGLE_FAVORITE
+	TOGGLE_FAVORITE,
+	REAL_API_RECEIVE_SINGLE_SHARE
 } from './types';
 
 import {
 	apiFetchShares,
-	apiFetchShareBySymbol
+	apiFetchShareBySymbol,
+	realApiFetchShare
 } from '../api';
 
 export function addCredits(amount) {
@@ -86,6 +88,17 @@ export function fetchShareBySymbol(symbol) {
 		apiFetchShareBySymbol(symbol).then(share => {
 			dispatch(receiveSingleShare(share));
 		})
+	}
+}
+
+export function realApiFetchShareBySymbol(symbol) {
+	return function(dispatch) {
+		realApiFetchShare(symbol).then(share => {
+			dispatch({
+				type: REAL_API_RECEIVE_SINGLE_SHARE,
+				payload: share
+			});
+		});
 	}
 }
 

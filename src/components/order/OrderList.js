@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import OrderItem from './OrderItem';
 
 class OrderList extends React.Component {
@@ -38,17 +39,16 @@ class OrderList extends React.Component {
 		return(
 			<nav aria-label="breadcrumb">
 			  <ol className="breadcrumb mb-0 bg-transparent">
-			    <li className="breadcrumb-item active" aria-current="page">Home</li>
+			    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+			    <li className="breadcrumb-item active" aria-current="page">Orders</li>
 			  </ol>
 			</nav>
 		);
 	}
 
 	render() {
-		console.log(this.props.orders);
 		return(
 			<div>
-				<h1>OrderList</h1>
 				{this.renderBreadcrumb()}
 				{this.renderContent()}
 			</div>

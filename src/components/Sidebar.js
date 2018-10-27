@@ -25,10 +25,10 @@ class Sidebar extends React.Component {
 							<Link to='/withdraw' className="nav-link">Withdraw</Link>
 						</li>
 						<li className="nav-item">
-							<Link to='/favorites' className="nav-link">My Favorites</Link>
+							<Link to='/orders' className="nav-link">Order History</Link>
 						</li>
 						<li className="nav-item">
-							<Link to='/orders' className="nav-link">Order History</Link>
+							<Link to='/favorites' className="nav-link">My Favorites</Link>
 						</li>
 					</ul>
 				</div>
