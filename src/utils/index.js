@@ -5,3 +5,7 @@
 export function formatNumber(value) {
 	return Number.parseFloat(value).toFixed(2);
 }
+
+export function formatPercentage(value) {
+	return (value * 100).toFixed(2) + '%';
+}

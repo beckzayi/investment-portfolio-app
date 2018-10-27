@@ -8,7 +8,8 @@ import {
 	FETCH_ORDERS,
 	ADD_ORDER,
 	TOGGLE_FAVORITE,
-	REAL_API_RECEIVE_SINGLE_SHARE
+	REAL_API_RECEIVE_SINGLE_SHARE,
+	REAL_API_REQUEST_SINGLE_SHARE
 } from './types';
 
 import {
@@ -91,8 +92,16 @@ export function fetchShareBySymbol(symbol) {
 	}
 }
 
+function realApiRequestShareBySymbol(symbol) {
+	return {
+		type: REAL_API_REQUEST_SINGLE_SHARE
+	}
+}
+
 export function realApiFetchShareBySymbol(symbol) {
 	return function(dispatch) {
+		dispatch(realApiRequestShareBySymbol);
+
 		realApiFetchShare(symbol).then(share => {
 			dispatch({
 				type: REAL_API_RECEIVE_SINGLE_SHARE,

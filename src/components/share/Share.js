@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addCredits, withdrawCredits, increaseEquity, decreaseEquity, fetchShareBySymbol, addOrder, realApiFetchShareBySymbol } from '../../actions';
-import { formatNumber } from '../../utils';
+import { formatNumber, formatPercentage } from '../../utils';
 
 class Share extends React.Component {
 	constructor(props) {
@@ -164,12 +164,34 @@ class Share extends React.Component {
 		
 		return(
 			<div className="real_api pt-4 border-top">
-				<div className="pt-4">
-					<p>Below is the <strong>real</strong> api response from iextrading.com. Only for display testing purpose</p>
-					<span className="mr-2">{selectedShareRealApi.symbol}</span>
-					<span className="mr-2">{selectedShareRealApi.companyName}</span>
-					<span className="mr-2">{selectedShareRealApi.change}</span>
-					<span className="mr-2">{selectedShareRealApi.changePercent}</span>
+				<div className="pt-2">
+					<p>Below is the <strong>real</strong> api response from <a href="https://iextrading.com/developer/docs/#quote" target="_blank" rel="noopener noreferrer">iextrading.com</a>. Only for display testing purpose.</p>
+					<div className="text-black-50">
+						<div className="row">
+							<div className="col-sm-2">Company</div>
+							<div className="col-sm-10">{selectedShareRealApi.companyName}</div>
+						</div>
+						<div className="row">
+							<div className="col-sm-2">Symbol</div>
+							<div className="col-sm-10">{selectedShareRealApi.symbol}</div>
+						</div>
+						<div className="row">
+							<div className="col-sm-2">Exchange</div>
+							<div className="col-sm-10">{selectedShareRealApi.primaryExchange}</div>
+						</div>
+						<div className="row">
+							<div className="col-sm-2">Close at</div>
+							<div className="col-sm-10">{selectedShareRealApi.close}</div>
+						</div>
+						<div className="row">
+							<div className="col-sm-2">Change</div>
+							<div className="col-sm-10">{selectedShareRealApi.change}</div>
+						</div>
+						<div className="row">
+							<div className="col-sm-2">Change Percent</div>
+							<div className="col-sm-10">{formatPercentage(selectedShareRealApi.changePercent)}</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		);
@@ -262,7 +284,7 @@ class Share extends React.Component {
 				{this.renderBreadcrumb()}
 				{ Object.keys(selectedShare).length > 0 ? this.renderShareContent() : '' }
 
-				<div className="row pt-4">
+				<div className="row py-4">
 					{this.renderBuyForm()}
 					{this.renderSellForm()}
 				</div>
