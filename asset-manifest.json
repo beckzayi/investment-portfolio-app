@@ -1,16 +1,16 @@
 {
   "main.css": "/investment-portfolio-app/static/css/main.936d485a.chunk.css",
-  "main.js": "/investment-portfolio-app/static/js/main.4e13c197.chunk.js",
-  "main.js.map": "/investment-portfolio-app/static/js/main.4e13c197.chunk.js.map",
+  "main.js": "/investment-portfolio-app/static/js/main.2d029182.chunk.js",
+  "main.js.map": "/investment-portfolio-app/static/js/main.2d029182.chunk.js.map",
   "static/css/1.4e48af13.chunk.css": "/investment-portfolio-app/static/css/1.4e48af13.chunk.css",
   "static/js/1.c13667f2.chunk.js": "/investment-portfolio-app/static/js/1.c13667f2.chunk.js",
   "static/js/1.c13667f2.chunk.js.map": "/investment-portfolio-app/static/js/1.c13667f2.chunk.js.map",
   "runtime~main.js": "/investment-portfolio-app/static/js/runtime~main.c92638b3.js",
   "runtime~main.js.map": "/investment-portfolio-app/static/js/runtime~main.c92638b3.js.map",
-  "static/css/main.936d485a.chunk.css.map": "/investment-portfolio-app/static/css/main.936d485a.chunk.css.map",
-  "static/media/logo.svg": "/investment-portfolio-app/static/media/logo.5d5d9eef.svg",
   "static/css/1.4e48af13.chunk.css.map": "/investment-portfolio-app/static/css/1.4e48af13.chunk.css.map",
+  "static/media/logo.svg": "/investment-portfolio-app/static/media/logo.5d5d9eef.svg",
+  "static/css/main.936d485a.chunk.css.map": "/investment-portfolio-app/static/css/main.936d485a.chunk.css.map",
   "index.html": "/investment-portfolio-app/index.html",
-  "precache-manifest.b377cd96e08e7921a2c929d5308e94f0.js": "/investment-portfolio-app/precache-manifest.b377cd96e08e7921a2c929d5308e94f0.js",
+  "precache-manifest.cf26f658328445de92e0ccdeda6a0285.js": "/investment-portfolio-app/precache-manifest.cf26f658328445de92e0ccdeda6a0285.js",
   "service-worker.js": "/investment-portfolio-app/service-worker.js"
 }
