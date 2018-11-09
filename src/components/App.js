@@ -13,7 +13,7 @@ class App extends React.Component {
 	render() {
 		return(
 			<div className="application container-fluid">
-				<BrowserRouter>
+				<BrowserRouter basename={process.env.PUBLIC_URL}>
 					<div className="row">
 						<div className="col-md-2 bg-dark">
 							<Sidebar />

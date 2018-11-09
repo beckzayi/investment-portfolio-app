@@ -4,10 +4,6 @@ import './header.css';
 import { formatNumber } from '../utils';
 
 class Header extends React.Component {
-	componentDidMount() {
-		// this.props.fetchBalance();
-	}
-
 	render() {
 		const { credits, equity } = this.props.balance;
 		
